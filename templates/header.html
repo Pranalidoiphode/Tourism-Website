@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css"
+  rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+ 
+  </head>
+  <body>
+
+
+<section class="border p-5 text-center mb-lg-4 bg-light mt-4 bg-image" style="background-image:url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');">
+<div class="mask" style="background-color: rgba(0,0,0,0,6);"></div>
+<nav class="navbar navbar-expand-lg navbar-light shadow-5-strong"></nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-light font-monospace">
+ 
+  <div class="container-fluid">
+
+    <a class="navbar-brand text-white"  href="{% url 'index' %}"><strong>TripTastic</strong></a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+    <i class="fas fa-bars"></i>
+    </button>
+
+ 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'explore' %}">All Packages</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">      
+          <a class="nav-link text-white" href="{% url 'userlogout' %}">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'showorders' %}">Bookings</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'userlogin' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="{% url 'register' %}">Register</a>
+        </li>
+        {% endif %}
+       
+      </ul>
+      <form method="GET"  action="{% url 'searchproduct' %}" class="d-flex" role="search">
+        <!-- <input class="col-md-9" type="search" placeholder="Where do want to go?" aria-label="Search"> -->
+        &nbsp
+
+        
+          <input class="form-control me-2" name='q'  value="{{query}}"type="search" placeholder="Where do want to go?" aria-label="Search">
+          <button class="btn btn-dark" type="submit">Search</button>
+      
+        
+      </form>
+   
+    </div>
+
+  </div>
+ 
+</nav>
+
+</section>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js">
+</script>
+  </body>
+</html>

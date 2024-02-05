@@ -1,0 +1,41 @@
+{% include 'header.html' %}
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Place Name</th>
+                    <th>Price</th>
+                    <th>No of People</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for x in book_item %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ x.t_id.place_name }}</td>
+                        <td>{{ x.t_id.price }}</td>
+                        <td>{{ x.no_people }}</td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="row justify-content-center">
+        <!-- Add the "Make Payment" button at the center -->
+        <form method="post" action="#">
+            {% csrf_token %}
+            <!-- You may want to include book IDs or other necessary information in the form -->
+            {% for x in book_item %}
+                <input type="hidden" name="book_id" value="{{ x.id }}">
+            {% endfor %}
+        </form>
+           <center> <a href="{% url 'dateselect' %}"><button type="submit" class="btn btn-primary">Make Payment</button></a></center>
+        
+    </div>
+</div>
+{% include 'footer.html' %}

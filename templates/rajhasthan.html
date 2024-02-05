@@ -1,0 +1,87 @@
+{% load static %}
+{% include 'header.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+
+<body  style="background:beige">
+    <!-- <div class="container px-5"></div> -->
+        <div class="row g-0">
+          <div class="col">
+            <h1>Explore Rajasthan</h1>
+           </div>
+          </div>
+           </div>
+    
+  <br>
+  <h5>Rajasthan is the largest state of the Republic of India in terms of area.</h5> 
+  
+  <h5>Famous historian James Tad named this state as Raithan or Rajasthan in "Annals and Antiquities of Rajasthan"</h5>
+
+        
+    
+    
+  <br><br><br>
+  
+
+  <div class="row">
+    
+    <div class="col-md-3">
+      
+      <div class="thumbnail">
+        <div class="row g-0">
+        <!-- <a href="C:\Django Files\Django\Jaisalmer-Fort.webp" target="_blank"> -->
+          
+          <img src="{% static '/images/Jaisalmer-Fort.webp' %}" alt="Lights" style="width:100%">
+          <div class="caption">
+            <h1>Jaisalmer Fort</h1>
+            <p>The city's most prominent landmark is the Jaisalmer Fort, also called Sonar Qila(Golden Fort).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+  
+          <img src="{% static '/images/Mehrangarh-Fort.jpg' %}" alt="Nature" style="width:100%">
+          <div class="caption">
+            <h1>Mehrangarh Fort</h1>
+            <p>Mehrangarh has been the headquarters of the senior branch of Rajput clan known as the Rathores</p>
+          </div>
+        
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+          <img src="{% static '/images/amberfort.jpg' %}" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <h1>Amber Fort</h1>
+            <p>The fort is strategically situated atop a hill, providing a vantage point.</p>
+          </div>
+      </div>
+        </div>
+
+        </div>
+          </div>
+        </div>
+      
+   
+    
+    
+
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+{% include 'footer.html' %}

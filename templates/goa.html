@@ -1,0 +1,70 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+</head>
+<body  style="background:rgb(179, 234, 247)">
+  <div class="row g-0">
+    <div class="col-md-3">
+      <h1>Explore Goa</h1>
+     </div>
+    </div>
+     </div>
+  <br>
+  <h5>Goa is a state on the southwestern coast of India within the Konkan region</h5> 
+  
+  <h5>Goa can be the perfect destination for a short holiday.</h5>
+  <br><br><br>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <!-- <a href="C:\Django Files\Django\Jaisalmer-Fort.webp" target="_blank"> -->
+          <img src="{% static '/images/cal.jfif' %}" alt="Lights" style="width:100%">
+          <div class="caption">
+            <h1>Calangute Beach</h1>
+            <p> Calangute Beach is the longest beach in North Goa, stretching from Candolim to Baga.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
+          <img src="{% static '/images/aguadafort.jpg' %}" alt="Nature" style="width:100%">
+          <div class="caption">
+            <h1>Aguada Fort</h1>
+            <p>Fort Aguada is a 17th-century Portuguese fort looking out at the confluence of Mandovi River and the Arabian Sea.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
+          <img src="{% static '/images/church.webp' %}" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <h1>Church
+            </h1>
+            <p>The Our Lady of Immaculate Conception Church is a very old gem in the list of churches in Goa.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  
+
+
+  </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+{% include 'footer.html' %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Calculation</title>
+</head>
+<body>
+
+    <!-- date_calculator/templates/date_calculator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Calculation</title>
+</head>
+<body>
+
+    <form id="myForm">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required>
+
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function calculateDays() {
+            var startDateInput = document.getElementById('startDate');
+            var endDateInput = document.getElementById('endDate');
+            var resultParagraph = document.getElementById('result');
+
+            // Get the values from the date inputs
+            var startDate = new Date(startDateInput.value);
+            var endDate = new Date(endDateInput.value);
+
+            // Check if the dates are valid
+            if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+                resultParagraph.textContent = 'Please enter valid dates.';
+                return;
+            }
+
+            // Calculate the difference in days
+            var timeDifference = endDate.getTime() - startDate.getTime();
+            var daysDifference = timeDifference / (1000 * 3600 * 24);
+
+            // Display the result
+            resultParagraph.textContent = 'Number of days: ' + daysDifference;
+        }
+
+        // Attach the calculateDays function to the input event of the date inputs
+        document.getElementById('startDate').addEventListener('input', calculateDays);
+        document.getElementById('endDate').addEventListener('input', calculateDays);
+    </script>
+
+</body>
+</html>
+
+
+    <script>
+        function calculateDays() {
+            var startDateInput = document.getElementById('startDate');
+            var endDateInput = document.getElementById('endDate');
+            var resultParagraph = document.getElementById('result');
+
+            // Get the values from the date inputs
+            var startDate = new Date(startDateInput.value);
+            var endDate = new Date(endDateInput.value);
+
+            // Check if the dates are valid
+            if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+                resultParagraph.textContent = 'Please enter valid dates.';
+                return;
+            }
+
+            // Calculate the difference in days
+            var timeDifference = endDate.getTime() - startDate.getTime();
+            var daysDifference = timeDifference / (1000 * 3600 * 24);
+
+            // Display the result
+            resultParagraph.textContent = 'Number of days: ' + daysDifference;
+        }
+
+        // Attach the calculateDays function to the input event of the date inputs
+        document.getElementById('startDate').addEventListener('input', calculateDays);
+        document.getElementById('endDate').addEventListener('input', calculateDays);
+    </script>
+
+</body>
+</html>

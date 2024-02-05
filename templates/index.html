@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'header.html' %}
+<title>TripTastic|Home</title>
+{% if username %}
+<strong>Welcome {{username}}!!!</strong>&nbsp;&nbsp;
+{% else %}
+<strong>Welcome Guest!!!</strong>&nbsp;&nbsp;
+{% endif %}
+<br>
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+<div class="col-md-12 mt-1 p-3 bg-body-secondary">
+  <div class="row">
+    {% for item in allplaces %}
+    <div class="col-lg-3  p-3">
+      <div class="card" style="width:18rem;">
+        <img class="card-img-top" src="{{item.image.url}}" alt="Card image cap" width="50px" height="150px">
+        
+        <div class="card-body">
+          <h4 class="card-title">{{item.place_name}}</h4>
+          <h5> <p class="card-text">₹{{item.price}}</p></h5>
+         
+          <a href="{% url 'explore' %}" class="btn btn-primary">Explore</a>
+          &nbsp &nbsp
+          <a href="/add_to_book/{{item.t_id}}" class="btn btn-primary">Book Tour</a>
+        </div>
+      </div>
+    </div>
+    
+      {% endfor %}
+        </div>
+    </div>
+   
+
+
+{% include 'footer.html' %}

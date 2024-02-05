@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Calculator</title>
+</head>
+<body>
+
+<div class="card">
+    <p>Item ID: 1</p>
+    <p>Start Date: <input type="date" id="startDate1" name="startDate" required></p>
+    <p>End Date: <input type="date" id="endDate1" name="endDate" required></p>
+    <p>Daily Rate: 50</p>
+    <p>Number of Days: <span id="days1"></span></p>
+    <p>Total Cost: <span id="totalCost1"></span></p>
+</div>
+
+<div class="card">
+    <p>Item ID: 2</p>
+    <p>Start Date: <input type="date" id="startDate2" name="startDate" required></p>
+    <p>End Date: <input type="date" id="endDate2" name="endDate" required></p>
+    <p>Daily Rate: 60</p>
+    <p>Number of Days: <span id="days2"></span></p>
+    <p>Total Cost: <span id="totalCost2"></span></p>
+</div>
+
+<script>
+    function calculateAndDisplay(itemId, dailyRate) {
+        var startDateInput = document.getElementById('startDate' + itemId);
+        var endDateInput = document.getElementById('endDate' + itemId);
+        var daysSpan = document.getElementById('days' + itemId);
+        var totalCostSpan = document.getElementById('totalCost' + itemId);
+
+        // Get the values from the date inputs
+        var startDate = new Date(startDateInput.value);
+        var endDate = new Date(endDateInput.value);
+
+        // Check if the dates are valid
+        if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+            daysSpan.textContent = 'Invalid dates';
+            totalCostSpan.textContent = 'Invalid dates';
+            return;
+        }
+
+        // Calculate the difference in days
+        var timeDifference = endDate.getTime() - startDate.getTime();
+        var daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+        // Calculate the total cost
+        var totalCost = daysDifference * dailyRate;
+
+        // Display the result
+        daysSpan.textContent = daysDifference;
+        totalCostSpan.textContent = totalCost;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Daily rates for each item
+        var dailyRates = {
+            1: 50,
+            2: 60
+        };
+
+        // Attach the calculateAndDisplay function to the input event of the date inputs for each item
+        document.getElementById('startDate1').addEventListener('input', function() {
+            calculateAndDisplay(1, dailyRates[1]);
+        });
+        document.getElementById('endDate1').addEventListener('input', function() {
+            calculateAndDisplay(1, dailyRates[1]);
+        });
+
+        document.getElementById('startDate2').addEventListener('input', function() {
+            calculateAndDisplay(2, dailyRates[2]);
+        });
+        document.getElementById('endDate2').addEventListener('input', function() {
+            calculateAndDisplay(2, dailyRates[2]);
+        });
+    });
+</script>
+
+</body>
+</html>

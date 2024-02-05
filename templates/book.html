@@ -1,0 +1,76 @@
+{% include 'header.html' %}
+{% load static %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-9  p-3 bg-body-secondary">
+            <div class="row">
+        {% for item in book_item %}
+        
+                <div class="col-md-4  p-3">
+                    <div class="card" style="width:18rem;">
+                        <div class="col-12">
+                        <img class="card-img-top" src="{{item.t_id.image.url}}" class="Card image cap"
+                            alt="{{item.t_id.place_name}}" width="50px" height="150px">
+                        </div>
+                            <div class="card-body">
+                                <center>
+                                    <h5><p class="card-title">{{item.t_id.place_name}}</p></h5>
+                                    <p class="card-text">Rs.{{item.t_id.price}}</p>
+                                </center>
+                                <p>
+                                    
+
+<p>
+                                    <strong>Number Of People:</strong>
+                                    <br>
+                                    <a href="/updatepeople/0/{{item.t_id.t_id}}">
+                                        <br><button class="btn btn-dark"  style="background-color: grey;">-</button></a>
+                                        
+                                    <input type="number" value="{{item.no_people}}">
+                                    <br><br>
+
+                                    <a href="/updatepeople/1/{{item.t_id.t_id}}"><button class="btn btn-dark" style="background-color: grey;">+</button></a>
+                                   
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        
+                                        <a href="/remove_from_book/{{item.t_id.t_id}}" class="btn btn-dark">Remove</a>
+                                    </div>
+                                    <!-- <div class="col-md-6">
+                                        <a href="{{item.t_id.t_id}}" class="btn btn-dark">Book Now</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
+                
+                <div class="col-md-3 bg-light p-3">
+                    <h5 class="bg-dark text-white p-2">Reserve Your Spot</h5>
+                    <p><strong>Place({{item}}):</strong>{{total}}</p>
+                    
+                    <!-- <form method="post" action="{% url 'book' %}" action="{% url 'orders' %}">
+
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Submit</button>
+                    </form>
+
+                    <p>You selected: {{ selected_date }}</p> -->
+              
+                    <hr>
+                    <!-- Add other details or uncomment the following lines if needed -->
+                    <!-- <p><strong>Total Amount:</strong> Rs.{{total}} </p>
+                    <p><strong>Date ({{item}}):</strong>{{date}}</p> -->
+                
+                    <a href="{% url 'orders' %}"><button class="btn btn-dark">Book Now</button></a>
+                </div>
+                
+            </div>
+            </div>
+      
+        {% include 'footer.html' %}

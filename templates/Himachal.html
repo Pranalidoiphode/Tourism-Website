@@ -1,0 +1,79 @@
+{%load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body  style="background:snow">
+  
+  <div class="row g-0">
+    <div class="col-md-3">
+      <h1>Explore Himachal Pradesh</h1>
+     </div>
+    </div>
+
+
+
+  <br>
+  <h5>This is popularly renowned for its Himalayan landscapes and popular hill-stations. </h5> 
+  
+  
+  <br><br><br>
+
+  <div class="row">
+    
+    <div class="col-md-3">
+      <div class="thumbnail">
+
+          <img src="{% static '/images/shimlaimg.jfif' %}" style="height: 200px;"  alt="Lights"  style="width:100px">
+          <div class="caption">
+            <h1>Shimla</h1>
+            <p>Shimla is the capital and the largest city of the northern Indian state of Himachal Pradesh. </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+       
+      <div class="thumbnail">
+        
+          <img src="{% static '/images/mann.jpg' %}" style="height: 200px;" alt="Lights" style="width:150px">
+          
+          <div class="caption">
+            <h1>Manali</h1>
+            <p>Manali is a popular tourist destination in India and serves as the gateway. </p>
+            
+          </div>
+        </a>
+      </div>
+       
+    </div>
+     
+    
+    <div class="col-md-3">
+       
+      <div class="thumbnail">
+     
+          <img src="{% static '/images/Shoghii.jpg' %}" style="height: 200px;" style="width:150%" alt="Fjords">
+          <div class="caption">
+            <h1>Shoghi</h1>
+            <p>Shoghi is popular for its modest nature walks as well as elaborate trekking trails.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        </div>
+      </div>
+
+
+
+</body>
+</html>
+{% include 'footer.html' %}
